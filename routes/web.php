@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiginController;
+use App\Http\Controllers\UserDataController;
 
 
 /*
@@ -14,13 +14,12 @@ use App\Http\Controllers\SiginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [SiginController::class, 'index']);
-
-Route::post('store-data', [SiginController::class, 'store']);
-Route::get('list', [SiginController::class, 'list']);
-Route::get('data-list', [SiginController::class, 'getdata']);
-Route::post('edit-list', [SiginController::class, 'edit']);
-Route::post('delete-data', [SiginController::class, 'destroy']);
+Route::get('/', [UserDataController::class, 'index']);
+Route::post('store-data', [UserDataController::class, 'StoreUser']);
+Route::get('user-list', [UserDataController::class, 'UserList']);
+Route::get('user-data-list', [UserDataController::class, 'getUserData']);
+Route::post('user-edit-data', [UserDataController::class, 'getUserDataById']);
+Route::post('delete-data', [UserDataController::class, 'DeleteUser']);
 
 
 
